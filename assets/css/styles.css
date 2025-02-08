@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+body {
+    font-family: "Merriweather", sans-serif;
+    font-weight: 500;
+    background: rgb(154,213,163);
+    background: linear-gradient(0deg, rgba(154,213,163,1) 0%, rgba(205,182,130,1) 100%);}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    max-width: 100%;
+    width: 600px;
+    height: 700px;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: transparent;
+    backdrop-filter: blur(300px);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.h-todo {
+    margin-top: -90px;
+    border-bottom: 4px solid #14213d;
+    color: #003049;
+    position: absolute;
+    top: 100px;
+    color: #14213d;
+}
+
+.add-task-btn {
+    width: 95%;
+    height: 40px;
+    transform: translateY(570px); 
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 3px;
+    padding: 4px;
+    background-color: #f3752b;
+    color: #000000;
+    border: 1px groove gray;
+    position: absolute;
+    top: 70px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    cursor: pointer;
+}
+
+.task-form-header {
+    width: 100%;
+    text-align: right;
+    margin-top: -10px;
+}
+
+.close-task-form-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.form-task {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    height: 460px;
+    padding: 20px 20px 0 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: #f3eff51a;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.task-form-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 80%;
+}
+
+.task-form-label {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0 5px 0;
+}
+
+.form-control {
+    height: 40px;
+    padding: 8px;
+    background: none;
+    color: #000000;
+    font-size: 15px;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+textarea {
+    field-sizing: content;
+    min-height: 140px;
+    max-height: 100px;
+}
+
+.task-form-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.btn {
+    height: 40px;
+    width: 90px;
+    border-radius: 30px;
+    transform: translateY(-19px);
+    background-color: #f3752b;
+    color: #000000;
+    border: 1px groove gray;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    cursor: pointer;
+}
+
+.confirm-close-dialog {
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 15px;
+}
+
+.confirm-close-dialog-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.discard-message-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#task-container {
+    height: 80%;
+    width: 500px;
+    overflow-y: auto;
+}
+
+.task {
+    margin: 5px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 760px) {
+    .container {
+        margin-top: 80px;
+        max-width: 100%;
+        width: 340px;
+        height: 500px;
+    }
+    .h-todo {
+        font-size: 20px;
+    }
+    .add-task-btn {
+        width: 93%;
+        height: 40px;
+        position: absolute;
+        top: -125px;
+    }
+    .form-task {
+        margin-top: -10px;
+        width: 85%;
+        height: 320px;
+        padding: 15px 15px 0 15px;
+    }
+    /* .task-form-header {
+        width: 100%;
+        text-align: right;
+        margin-top: -10px;
+    } */
+    .task-form-label {
+        font-size: 18px;
+        margin: 2px 0 2px 0;
+    }
+    .form-control {
+        height: 35px;
+        padding: 4px;
+    }
+    textarea {
+        min-height: 80px;
+        max-height: 100px;
+    }
+    .btn {
+        height: 30px;
+        width: 70px;
+        transform: translateY(-8px);
+        font-size: 10px;
+        font-weight: bold;
+    }
+}
+
