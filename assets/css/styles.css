@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 body {
@@ -70,7 +70,7 @@ main {
     margin-top: -10px;
 }
 
-.close-task-form-btn {
+.close-task-btn {
     background: none;
     border: none;
     cursor: pointer;
@@ -81,12 +81,13 @@ main {
     flex-direction: column;
     justify-content: space-between;
     width: 80%;
-    height: 460px;
+    height: 495px;
     padding: 20px 20px 0 20px;
     border: 1px solid gray;
     border-radius: 5px;
-    background-color: #f3eff51a;
+    background-color: #f3eff5;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    position: absolute;
 }
 
 .task-form-body {
@@ -129,7 +130,7 @@ textarea {
     height: 40px;
     width: 90px;
     border-radius: 30px;
-    transform: translateY(-19px);
+    transform: translateY(-29px);
     background-color: #f3752b;
     color: #000000;
     border: 1px groove gray;
@@ -154,14 +155,86 @@ textarea {
     font-size: 1.5rem;
 }
 
-#task-container {
+.task-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     height: 80%;
     width: 500px;
     overflow-y: auto;
+    border: 1px groove gray;
+    border-radius: 4px;
+    padding: 5px 0;
 }
 
 .task {
-    margin: 5px 0;
+    border: 1px solid gray;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 96%;
+    height: 45px;
+    margin: 3px 0;
+    padding: 6px;
+    background-color: #ffffff7a;
+}
+
+strong {
+    color: #000000;
+}
+
+.task-btn {
+    text-align: right;
+    width: 30px;
+    height: 20px;
+    border: none;
+    background: none;
+}
+
+dialog {
+    transform: translate(350px, 290px);
+    width: 350px;
+    height: 140px;
+    border: 2px groove gray;
+    border-radius: 3px;
+}
+
+.dialog-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5px;
+}
+
+.discard-message-text {
+    text-align: center;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.confirm-close-dialog-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    height: 50px;
+}
+
+.dialog-btn {
+    width: 80px;
+    height: 40px;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    cursor: pointer;
+    background-color: #f3752b
 }
 
 .hidden {
@@ -187,7 +260,7 @@ textarea {
     .form-task {
         margin-top: -10px;
         width: 85%;
-        height: 320px;
+        height: 330px;
         padding: 15px 15px 0 15px;
     }
     /* .task-form-header {
@@ -210,9 +283,48 @@ textarea {
     .btn {
         height: 30px;
         width: 70px;
-        transform: translateY(-8px);
+        transform: translateY(-10px);
         font-size: 10px;
         font-weight: bold;
+    }
+    .task-container {
+        height: 80%;
+        width: 300px;
+    }
+    .task {
+        align-items: center;
+        text-align: left;
+        width: 95%;
+        height: 40px;
+        padding: 6px;
+        background-color: #ffffff7a;
+        font-size: 12px;
+    }
+    dialog {
+        transform: translate(76px, 250px);
+        width: 260px;
+        height: 100px;
+    }
+    
+    .dialog-form {
+        row-gap: 15px;
+    }
+    
+    .discard-message-text {
+        font-size: 15px;
+    }
+    
+    .confirm-close-dialog-btn-container {
+        width: 80%;
+        height: 30px;
+        margin-top: -2px;
+    }
+    
+    .dialog-btn {
+        width: 70px;
+        height: 25px;
+        border-radius: 30px;
+        font-size: 15px;
     }
 }
 
