@@ -8,14 +8,14 @@
 body {
     font-family: "Merriweather", sans-serif;
     font-weight: 500;
-    background: rgb(154,213,163);
-    background: linear-gradient(0deg, rgba(154,213,163,1) 0%, rgba(205,182,130,1) 100%);}
-
+    background-color: #ffffff;   
+}
 main {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: start;
     height: 100%;
 }
 
@@ -31,18 +31,17 @@ main {
     padding: 15px;
     border: 1px solid gray;
     border-radius: 4px;
-    background-color: transparent;
+    background-color: #212529;
     backdrop-filter: blur(300px);
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .h-todo {
     margin-top: -90px;
-    border-bottom: 4px solid #14213d;
-    color: #003049;
+    border-bottom: 4px solid #ffffff;
+    color: #0466c8;
     position: absolute;
     top: 100px;
-    color: #14213d;
 }
 
 .add-task-btn {
@@ -55,13 +54,17 @@ main {
     align-items: center;
     border-radius: 3px;
     padding: 4px;
-    background-color: #f3752b;
-    color: #000000;
+    background-color: #004e89;
+    color: #ffffff;
     border: 1px groove gray;
     position: absolute;
     top: 70px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     cursor: pointer;
+}
+
+.add-task-btn > strong {
+    color: #ffffff;
 }
 
 .task-form-header {
@@ -85,7 +88,7 @@ main {
     padding: 20px 20px 0 20px;
     border: 1px solid gray;
     border-radius: 5px;
-    background-color: #f3eff5;
+    background-color: #fcfcfc;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     position: absolute;
 }
@@ -131,28 +134,11 @@ textarea {
     width: 90px;
     border-radius: 30px;
     transform: translateY(-29px);
-    background-color: #f3752b;
-    color: #000000;
+    background-color: #004e89;
+    color: #ffffff;
     border: 1px groove gray;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     cursor: pointer;
-}
-
-.confirm-close-dialog {
-    padding: 10px;
-    margin: 10px auto;
-    border-radius: 15px;
-}
-
-.confirm-close-dialog-btn-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.discard-message-text {
-    font-weight: bold;
-    font-size: 1.5rem;
 }
 
 .task-container {
@@ -169,7 +155,6 @@ textarea {
 }
 
 .task {
-    border: 1px solid gray;
     border-radius: 3px;
     display: flex;
     flex-direction: row;
@@ -180,7 +165,16 @@ textarea {
     height: 45px;
     margin: 3px 0;
     padding: 6px;
-    background-color: #ffffff7a;
+    background-color: #f2f4f3;
+}
+
+.date-highlight {
+    color: red;
+}
+
+.title-highlight {
+    color: #0466c8;
+    font-weight: bold;
 }
 
 strong {
@@ -193,48 +187,46 @@ strong {
     height: 20px;
     border: none;
     background: none;
+    cursor: pointer;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
 }
 
 dialog {
-    transform: translate(350px, 290px);
-    width: 350px;
-    height: 140px;
-    border: 2px groove gray;
-    border-radius: 3px;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.discard-message-text {
+    margin-top: 5px;
+    font-weight: bold;
 }
 
 .dialog-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 5px;
-}
-
-.discard-message-text {
     text-align: center;
-    margin-top: 20px;
-    font-style: normal;
-    font-weight: 400;
+    row-gap: 20px;
 }
 
 .confirm-close-dialog-btn-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    width: 80%;
-    height: 50px;
+    width: 250px;
+    margin-bottom: 15px;
 }
 
 .dialog-btn {
     width: 80px;
     height: 40px;
+    background-color: #004e89;
+    color: #ffffff;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     cursor: pointer;
-    background-color: #f3752b
 }
 
 .hidden {
@@ -297,34 +289,14 @@ dialog {
         width: 95%;
         height: 40px;
         padding: 6px;
-        background-color: #ffffff7a;
+        background-color: #ffffff;
         font-size: 12px;
     }
     dialog {
-        transform: translate(76px, 250px);
-        width: 260px;
-        height: 100px;
-    }
-    
-    .dialog-form {
-        row-gap: 15px;
-    }
-    
-    .discard-message-text {
-        font-size: 15px;
-    }
-    
-    .confirm-close-dialog-btn-container {
-        width: 80%;
-        height: 30px;
-        margin-top: -2px;
-    }
-    
-    .dialog-btn {
-        width: 70px;
-        height: 25px;
-        border-radius: 30px;
-        font-size: 15px;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Keeps it centered */
     }
 }
 
